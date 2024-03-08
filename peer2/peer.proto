@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message listFilesSended {
+    repeated string file = 1;
+}
+
+message confirmation {
+    string status_code = 1;
+}
+
+service ServerHandler {
+    rpc poll_peer_files(listFilesSended) returns (confirmation) {}
+}
